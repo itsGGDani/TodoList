@@ -1,3 +1,86 @@
 body{
     background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#inputBoxes{
+    width: 10vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+label{
+    color: white;
+}
+
+.data-table {
+  border-collapse: collapse;
+  width: 60%;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #c3c8cc;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.data-table thead {
+  background-color: #e3e7eb;
+  font-weight: bold;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #1b4168;
+  color: aliceblue;
+}
+
+.data-table tbody tr {
+  background-color: gold;
+}
+
+.data-table tfoot {
+  background-color: #c8d8e4;
+  font-style: italic;
+}
+
+#input-panel {
+  width: 320px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 1px solid #c3c8cc;
+  background-color: rgb(140, 140, 213);
+  border-radius: 15px;
+}
+
+#input-panel h3 {
+  margin: 0 0 4px 0;
+}
+
+#input-panel input {
+  padding: 6px 8px;
+  border: 1px solid #68a5d7;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+#input-panel button {
+  margin-top: 4px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#input-panel button:hover {
+  background-color: yellow;
+  font-weight: bolder;
+}
+
+.btnTd{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
