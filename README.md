@@ -15,7 +15,5 @@ A simple and modern to-do list application built with HTML, CSS, and JavaScript.
 1. clone the repo.
 2. Open index.html in your desired browser
 
-## Future improvements
---Settings (Dark, white)
---Due Date
---Task prios.
+## Css
+--it looks not good but good enough for the mini project
