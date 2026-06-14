@@ -13,6 +13,31 @@
     <div id="container">
 
     </div>
+<form id="tasks">
+
+    <label for="date">Created Date</label>
+    <input type="string" id="date" name="date"required>
+
+    <label for="deadTime">Deadline</label>
+    <input type="string" id="deadTime" name="deadTime" required>
+
+    <label for="doingTime">Estimated Time (hours)</label>
+    <input type="string" id="doingTime" name="doingTime" min="1" required>
+
+    <label for="prio">Priority</label>
+    <select id="prio" name="prio" required>
+        <option value="">Select Priority</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="important">Important</option>
+    </select>
+
+    <label for="taskText">Task Description</label>
+    <textarea id="taskText" name="taskText" rows="4" required></textarea>
+
+    <button type="submit">Add Task</button>
+
+</form>
 </body>
     <script src="js/main.js"></script>
     <script src="js/handlers.js"></script>

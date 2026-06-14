@@ -9,9 +9,20 @@ let data = [
 window.onload = (event) =>{
     displayInputBoxes()
     displayTable()
-    displayForm()
+
+    const form = document.getElementById('tasks')
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault()
+        handleCheck()
+    })
 }
- 
+
+function addToData(createDate, deadDate, doingTime, prio, text){
+    data.push({date: createDate, deadTime: deadDate, doingTime: doingTime, prio: prio, taskText: text})
+    console.log(data)
+    displayTable()
+}
 //rendering Table
 function displayTable(){
     clearContainer("container")
@@ -61,14 +72,15 @@ function renderBtn(txt, handler){
     return btn
 }
 
-function renderTBodyTr(keys, object){
+function renderTBodyTr(keys, object, i){
     const tr = document.createElement('tr')
     tr.appendChild(renderTH(object[keys[0]], "row"))
+
     for(let i = 1; i < keys.length; i++){
         tr.appendChild(renderTD(object[keys[i]]))
     }
     const td = renderTD("")
-    td.appendChild(renderBtn("Delete", () => handleDelete()))
+    td.appendChild(renderBtn("Delete", () => handleDelete(i)))
 
     tr.appendChild(td)
     return tr
@@ -77,7 +89,7 @@ function renderTBodyTr(keys, object){
 function renderTBody(keys, datas){
     const tBodyParent = document.createElement('tbody')
     for(let i = 0; i < datas.length; i++){
-        tBodyParent.appendChild(renderTBodyTr(keys, datas[i]))
+        tBodyParent.appendChild(renderTBodyTr(keys, datas[i], i))
     }
     
     return tBodyParent
@@ -138,9 +150,4 @@ function renderInputBoxes(){
 
 function readValue(id){
     return document.getElementById(id).value
-}
-
-
-function displayForm(){
-    
 }
